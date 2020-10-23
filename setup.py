@@ -22,7 +22,7 @@ setup(name='eve-s3storage',
       install_requires=reqs,
       include_package_data=True,
       zip_safe=False,
-      url='https://github.com/gwainer/eve-s3storage',
+      url='https://github.com/ebadia/eve-s3storage',
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Web Environment',
