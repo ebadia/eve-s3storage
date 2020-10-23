@@ -1,6 +1,14 @@
 from distutils.core import setup
 from setuptools import find_packages
-from pip.req import parse_requirements
+
+#############################
+# avoid ModuleNotFoundError: No module named 'pip.req'
+# from: https://stackoverflow.com/questions/21823649/how-to-upload-image-through-python-eve-to-some-external-storage-server-e-g-s3
+try: # for pip >= 10
+    from pip._internal.req import parse_requirements
+except ImportError: # for pip <= 9.0.3
+    from pip.req import parse_requirements
+#############################
 
 install_reqs = parse_requirements('requirements.txt', session=False)
 reqs = [str(ir.req) for ir in install_reqs]
